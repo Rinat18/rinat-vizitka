@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ринат Досматов — Business Analyst & AI Automation</title>
+<meta name="description" content="Ринат Досматов — бизнес-анализ, AI-автоматизация и продуктовые кейсы. Помогаю бизнесу выстраивать процессы и внедрять AI.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="preloader" id="preloader">
+  <span class="preloader__logo">RD</span>
+  <span class="preloader__count" id="preloaderCount">0</span>
+</div>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="noise"></div>
+
+<header class="nav" id="nav">
+  <a href="#" class="nav__logo">RD<span class="dot">.</span></a>
+  <nav class="nav__links">
+    <a href="#about">Обо мне</a>
+    <a href="#services">Услуги</a>
+    <a href="#cases">Кейсы</a>
+    <a href="#experience">Опыт</a>
+    <a href="#contact" class="nav__cta magnetic">Обсудить проект</a>
+  </nav>
+  <button class="nav__burger" id="burger" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">Обо мне</a>
+  <a href="#services">Услуги</a>
+  <a href="#cases">Кейсы</a>
+  <a href="#experience">Опыт</a>
+  <a href="#contact">Обсудить проект</a>
+</div>
+
+<main>
+
+  <section class="hero">
+    <div class="hero__bg">
+      <div class="blob blob--1" data-depth="0.15"></div>
+      <div class="blob blob--2" data-depth="0.3"></div>
+      <div class="blob blob--3" data-depth="0.22"></div>
+      <div class="grid-overlay"></div>
+    </div>
+
+    <p class="hero__eyebrow split-in">привет, меня зовут</p>
+    <h1 class="hero__name" id="heroName">Ринат Досматов</h1>
+    <h2 class="hero__role">
+      <span id="typed"></span><span class="cursor">|</span>
+    </h2>
+    <p class="hero__desc split-in">
+      Помогаю бизнесу превращать хаос в процессы: собираю требования, строю BRD
+      и внедряю AI-автоматизацию там, где раньше всё держалось на ручном труде.
+    </p>
+    <div class="hero__actions split-in">
+      <a href="#contact" class="btn btn--primary magnetic">Обсудить проект</a>
+      <a href="#cases" class="btn btn--ghost magnetic">Смотреть кейсы</a>
+    </div>
+
+    <div class="scroll-hint split-in">
+      <div class="scroll-hint__mouse"><span></span></div>
+      <span>scroll</span>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stats__grid">
+      <div class="stat reveal">
+        <span class="stat__num" data-count="6">0</span>
+        <p>проектов в работе</p>
+      </div>
+      <div class="stat reveal">
+        <span class="stat__num" data-count="2">0</span>
+        <p>компании, где прокачиваю BA</p>
+      </div>
+      <div class="stat reveal">
+        <span class="stat__num" data-count="5" data-suffix="+">0</span>
+        <p>AI-инструментов ежедневно</p>
+      </div>
+      <div class="stat reveal">
+        <span class="stat__num" data-count="100" data-suffix="%">0</span>
+        <p>фокус на результат</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <p class="section__index reveal">01</p>
+    <h3 class="section__title reveal">Чем могу быть полезен</h3>
+    <div class="services-grid">
+      <div class="service-card tilt reveal">
+        <span class="service-card__num">01</span>
+        <h4>Бизнес-анализ</h4>
+        <p>Сбор требований, бэклог и BRD, которые не приходится переписывать с нуля.</p>
+      </div>
+      <div class="service-card tilt reveal">
+        <span class="service-card__num">02</span>
+        <h4>AI-автоматизация</h4>
+        <p>Внедряю Claude и LLM-инструменты в рабочие процессы — от поддержки до продукта.</p>
+      </div>
+      <div class="service-card tilt reveal">
+        <span class="service-card__num">03</span>
+        <h4>Данные и парсинг</h4>
+        <p>Собираю и структурирую данные: от объявлений по авто до недвижимости.</p>
+      </div>
+      <div class="service-card tilt reveal">
+        <span class="service-card__num">04</span>
+        <h4>Платёжные интеграции</h4>
+        <p>Глубокое знание FreedomPay API — консультации и поддержка интеграций.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <p class="section__index reveal">02</p>
+    <h3 class="section__title reveal">Обо мне</h3>
+    <div class="about reveal">
+      <p>
+        Сейчас я L1-поддержка в <strong>FreedomPay</strong> — платёжном шлюзе для
+        Кыргызстана — и постепенно перехожу в роль <strong>Business Analyst</strong>.
+        Параллельно веду поддержку white-label казино <strong>Pinco</strong> и
+        развиваю собственные продукты — от парсеров до пет-стартапов.
+      </p>
+      <p>
+        Свободное время уходит на «второй мозг» в Obsidian и эксперименты
+        с Claude Code как с инструментом для автоматизации рутины — своей и чужой.
+      </p>
+    </div>
+  </section>
+
+  <section id="cases" class="section">
+    <p class="section__index reveal">03</p>
+    <h3 class="section__title reveal">Кейсы</h3>
+    <div class="projects-grid">
+
+      <article class="project-card tilt reveal">
+        <div class="project-card__top">
+          <h4>car-parser</h4>
+          <span class="badge badge--live">задеплоен</span>
+        </div>
+        <p>Парсер объявлений по авто. Vercel + PostgreSQL.</p>
+      </article>
+
+      <article class="project-card tilt reveal">
+        <div class="project-card__top">
+          <h4>KG Real Estate</h4>
+          <span class="badge badge--idea">в работе</span>
+        </div>
+        <p>Скрапер объявлений недвижимости по Кыргызстану.</p>
+      </article>
+
+      <article class="project-card tilt reveal">
+        <div class="project-card__top">
+          <h4>NomadEvents</h4>
+          <span class="badge badge--idea">стартап</span>
+        </div>
+        <p>Платформа для событий — в разработке.</p>
+      </article>
+
+      <article class="project-card tilt reveal">
+        <div class="project-card__top">
+          <h4>Legalit</h4>
+          <span class="badge badge--idea">стартап</span>
+        </div>
+        <p>Легал-тех проект — в разработке.</p>
+      </article>
+
+      <article class="project-card tilt reveal">
+        <div class="project-card__top">
+          <h4>Второй мозг</h4>
+          <span class="badge badge--live">в работе ежедневно</span>
+        </div>
+        <p>Автоматизация личных процессов: Obsidian + Claude.</p>
+      </article>
+
+      <article class="project-card tilt reveal">
+        <div class="project-card__top">
+          <h4>Психо мама</h4>
+          <span class="badge badge--idea">личный проект</span>
+        </div>
+        <p>Психологический проект для мамы.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <p class="section__index reveal">04</p>
+    <h3 class="section__title reveal">Опыт</h3>
+    <div class="timeline">
+      <div class="timeline__item reveal">
+        <div class="timeline__dot"></div>
+        <div class="timeline__content">
+          <div class="timeline__head">
+            <h4>FreedomPay</h4>
+            <span class="timeline__tag">сейчас</span>
+          </div>
+          <p class="timeline__role">Support L1 → Business Analyst (в переходе)</p>
+          <p>Платёжный шлюз для Кыргызстана. Поддержка изнутри платёжных потоков, сейчас — переход в BA: бэклог, требования, работа с продуктом.</p>
+        </div>
+      </div>
+      <div class="timeline__item reveal">
+        <div class="timeline__dot"></div>
+        <div class="timeline__content">
+          <div class="timeline__head">
+            <h4>Pinco</h4>
+            <span class="timeline__tag">параллельно</span>
+          </div>
+          <p class="timeline__role">Support L1, White-Label</p>
+          <p>Поддержка white-label казино-продукта, работа с партнёрскими брендами.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="marquee-section">
+    <div class="marquee">
+      <div class="marquee__row marquee__row--1">
+        <span>Claude API</span><span>Claude Code</span><span>Prompt Engineering</span><span>Business Analysis</span><span>BRD</span><span>JIRA</span><span>Confluence</span><span>Node.js</span>
+        <span>Claude API</span><span>Claude Code</span><span>Prompt Engineering</span><span>Business Analysis</span><span>BRD</span><span>JIRA</span><span>Confluence</span><span>Node.js</span>
+      </div>
+      <div class="marquee__row marquee__row--2">
+        <span>PostgreSQL</span><span>Obsidian</span><span>Markdown</span><span>FreedomPay API</span><span>PARA</span><span>Vercel</span><span>AI-Автоматизация</span><span>Second Brain</span>
+        <span>PostgreSQL</span><span>Obsidian</span><span>Markdown</span><span>FreedomPay API</span><span>PARA</span><span>Vercel</span><span>AI-Автоматизация</span><span>Second Brain</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section section--contact">
+    <p class="section__index reveal">05</p>
+    <h3 class="section__title reveal">Давайте обсудим проект</h3>
+    <p class="contact__lead reveal">Открыт для общения о BA-практиках, продуктах и AI-автоматизации.</p>
+    <a href="mailto:dosmatovrinat60@gmail.com" class="contact__email magnetic reveal">dosmatovrinat60@gmail.com</a>
+    <div class="contact__links reveal">
+      <a href="#" class="contact__social" data-placeholder="telegram">Telegram</a>
+      <a href="#" class="contact__social" data-placeholder="linkedin">LinkedIn</a>
+      <a href="#" class="contact__social" data-placeholder="github">GitHub</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 Ринат Досматов</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
