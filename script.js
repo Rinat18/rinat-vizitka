@@ -1,7 +1,7 @@
 /* ---------- Preloader ---------- */
 const preloader = document.getElementById('preloader');
 const preloaderCount = document.getElementById('preloaderCount');
-const PRELOAD_MS = 1100;
+const PRELOAD_MS = 900;
 const preloadStart = performance.now();
 
 function preloadTick(now) {
@@ -16,59 +16,12 @@ function preloadTick(now) {
 }
 requestAnimationFrame(preloadTick);
 
-/* ---------- Hero entrance (letters + fades) ---------- */
+/* ---------- Hero entrance ---------- */
 function startHeroAnimations() {
-  const heroName = document.getElementById('heroName');
-  const text = heroName.textContent.trim();
-  heroName.textContent = '';
-  [...text].forEach((ch, i) => {
-    const span = document.createElement('span');
-    span.textContent = ch === ' ' ? ' ' : ch;
-    span.className = ch === ' ' ? 'letter space' : 'letter';
-    span.style.setProperty('--d', `${i * 35}ms`);
-    heroName.appendChild(span);
-  });
-  heroName.classList.add('play');
-
   document.querySelectorAll('.split-in').forEach((el, i) => {
-    el.style.setProperty('--d', `${200 + i * 90}ms`);
+    el.style.setProperty('--d', `${i * 90}ms`);
     el.classList.add('play');
   });
-
-  typeRoles();
-}
-
-/* ---------- Typing effect for hero role line ---------- */
-const roles = [
-  'Бизнес-аналитик',
-  'AI-автоматизатор',
-  'Партнёр по продукту',
-  'Founder-в-душе'
-];
-const typedEl = document.getElementById('typed');
-let roleIndex = 0;
-let charIndex = 0;
-let deleting = false;
-
-function typeRoles() {
-  const current = roles[roleIndex];
-  if (!deleting) {
-    charIndex++;
-    typedEl.textContent = current.slice(0, charIndex);
-    if (charIndex === current.length) {
-      deleting = true;
-      setTimeout(typeRoles, 1600);
-      return;
-    }
-  } else {
-    charIndex--;
-    typedEl.textContent = current.slice(0, charIndex);
-    if (charIndex === 0) {
-      deleting = false;
-      roleIndex = (roleIndex + 1) % roles.length;
-    }
-  }
-  setTimeout(typeRoles, deleting ? 40 : 70);
 }
 
 /* ---------- Scroll reveal ---------- */
@@ -96,7 +49,8 @@ const statObserver = new IntersectionObserver((entries) => {
     function step(now) {
       const t = Math.min(1, (now - start) / duration);
       const eased = 1 - Math.pow(1 - t, 3);
-      el.textContent = Math.round(eased * target) + suffix;
+      const value = eased * target;
+      el.textContent = (Number.isInteger(target) ? Math.round(value) : value.toFixed(1)) + suffix;
       if (t < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
@@ -118,12 +72,32 @@ mobileMenu.querySelectorAll('a').forEach((a) => {
   a.addEventListener('click', () => mobileMenu.classList.remove('open'));
 });
 
+/* ---------- Cursor spotlight ---------- */
+const spotlight = document.getElementById('spotlight');
+
+/* ---------- Hero mockup 3D tilt ---------- */
+const heroMockup = document.getElementById('heroMockup');
+
 /* ---------- Parallax blobs ---------- */
 const blobs = document.querySelectorAll('.blob');
 let mouseX = 0, mouseY = 0;
 window.addEventListener('mousemove', (e) => {
   mouseX = (e.clientX / window.innerWidth) - 0.5;
   mouseY = (e.clientY / window.innerHeight) - 0.5;
+
+  if (spotlight) {
+    spotlight.style.setProperty('--sx', `${e.clientX}px`);
+    spotlight.style.setProperty('--sy', `${e.clientY}px`);
+  }
+
+  if (heroMockup) {
+    const rect = heroMockup.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const dx = (e.clientX - cx) / rect.width;
+    const dy = (e.clientY - cy) / rect.height;
+    heroMockup.style.transform = `rotateX(${-dy * 10}deg) rotateY(${dx * 14}deg)`;
+  }
 });
 
 function parallaxLoop() {
@@ -138,42 +112,13 @@ function parallaxLoop() {
 }
 requestAnimationFrame(parallaxLoop);
 
-/* ---------- Custom cursor ---------- */
-const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-if (isFinePointer) {
-  document.body.classList.add('has-cursor');
-  const dot = document.getElementById('cursorDot');
-  const ring = document.getElementById('cursorRing');
-  let dotX = 0, dotY = 0, ringX = 0, ringY = 0;
-
-  window.addEventListener('mousemove', (e) => {
-    dotX = e.clientX; dotY = e.clientY;
-    dot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
-  });
-
-  function ringLoop() {
-    ringX += (dotX - ringX) * 0.18;
-    ringY += (dotY - ringY) * 0.18;
-    ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
-    requestAnimationFrame(ringLoop);
-  }
-  requestAnimationFrame(ringLoop);
-
-  document.addEventListener('mouseover', (e) => {
-    if (e.target.closest('a, button, .tilt')) ring.classList.add('is-active');
-  });
-  document.addEventListener('mouseout', (e) => {
-    if (e.target.closest('a, button, .tilt')) ring.classList.remove('is-active');
-  });
-}
-
 /* ---------- Magnetic buttons ---------- */
 document.querySelectorAll('.magnetic').forEach((el) => {
   el.addEventListener('mousemove', (e) => {
     const rect = el.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
-    el.style.transform = `translate(${x * 0.25}px, ${y * 0.4}px)`;
+    el.style.transform = `translate(${x * 0.2}px, ${y * 0.3}px)`;
   });
   el.addEventListener('mouseleave', () => {
     el.style.transform = 'translate(0, 0)';
@@ -186,9 +131,44 @@ document.querySelectorAll('.tilt').forEach((el) => {
     const rect = el.getBoundingClientRect();
     const px = (e.clientX - rect.left) / rect.width - 0.5;
     const py = (e.clientY - rect.top) / rect.height - 0.5;
-    el.style.transform = `perspective(600px) rotateX(${-py * 8}deg) rotateY(${px * 8}deg) translateY(-4px)`;
+    el.style.transform = `perspective(700px) rotateX(${-py * 6}deg) rotateY(${px * 6}deg) translateY(-4px)`;
   });
   el.addEventListener('mouseleave', () => {
-    el.style.transform = 'perspective(600px) rotateX(0) rotateY(0) translateY(0)';
+    el.style.transform = 'perspective(700px) rotateX(0) rotateY(0) translateY(0)';
   });
 });
+
+/* ---------- Contact form → Telegram ---------- */
+const contactForm = document.getElementById('contactForm');
+const formNote = document.getElementById('formNote');
+const TG_TOKEN = '8798890094:AAEWwauRD0tDjrpKwlZp0Yv-yNLssd55v5A';
+const TG_CHAT  = '755194552';
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(contactForm);
+    const name    = data.get('name')    || '—';
+    const company = data.get('company') || '—';
+    const phone   = data.get('phone')   || '—';
+    const email   = data.get('email')   || '—';
+    const message = data.get('message') || '—';
+
+    const text = `📬 <b>Новая заявка с сайта</b>\n\n👤 <b>Имя:</b> ${name}\n🏢 <b>Бизнес:</b> ${company}\n📞 <b>Телефон:</b> ${phone}\n✉️ <b>Email:</b> ${email}\n📝 <b>Проект:</b> ${message}`;
+
+    try {
+      const res = await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: TG_CHAT, text, parse_mode: 'HTML' }),
+      });
+      if (!res.ok) throw new Error();
+      formNote.style.color = '';
+      formNote.textContent = 'Заявка отправлена. Мы свяжемся с вами в ближайшее время.';
+      contactForm.reset();
+    } catch {
+      formNote.style.color = '#ff4d4d';
+      formNote.textContent = 'Ошибка отправки. Напишите напрямую в Telegram или на Email.';
+    }
+  });
+}

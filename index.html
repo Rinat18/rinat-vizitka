@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ринат Досматов — Business Analyst & AI Automation</title>
-<meta name="description" content="Ринат Досматов — бизнес-анализ, AI-автоматизация и продуктовые кейсы. Помогаю бизнесу выстраивать процессы и внедрять AI.">
+<title>Ринат — сайты для бизнеса с приёмом онлайн-платежей</title>
+<meta name="description" content="Делаю сайты под ключ и подключаю приём онлайн-платежей через FreedomPay: Visa, Mastercard, Элкарт. Лендинги, сайты-визитки, интернет-магазины — с оплатой прямо на сайте.">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,23 +14,21 @@
 <body>
 
 <div class="preloader" id="preloader">
-  <span class="preloader__logo">RD</span>
+  <span class="preloader__logo">Р.</span>
   <span class="preloader__count" id="preloaderCount">0</span>
 </div>
 
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-
 <div class="noise"></div>
+<div class="spotlight" id="spotlight"></div>
 
 <header class="nav" id="nav">
-  <a href="#" class="nav__logo">RD<span class="dot">.</span></a>
+  <a href="#" class="nav__logo">Ринат<span class="dot">.</span> <span class="nav__logo-sub">сайты для бизнеса</span></a>
   <nav class="nav__links">
-    <a href="#about">Обо мне</a>
-    <a href="#services">Услуги</a>
-    <a href="#cases">Кейсы</a>
-    <a href="#experience">Опыт</a>
-    <a href="#contact" class="nav__cta magnetic">Обсудить проект</a>
+    <a href="#features">Услуги</a>
+    <a href="#how">Как работаем</a>
+    <a href="#pricing">Тарифы</a>
+    <a href="#faq">Вопросы</a>
+    <a href="#contact" class="nav__cta magnetic">Оставить заявку</a>
   </nav>
   <button class="nav__burger" id="burger" aria-label="Меню">
     <span></span><span></span><span></span>
@@ -38,11 +36,11 @@
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#about">Обо мне</a>
-  <a href="#services">Услуги</a>
-  <a href="#cases">Кейсы</a>
-  <a href="#experience">Опыт</a>
-  <a href="#contact">Обсудить проект</a>
+  <a href="#features">Услуги</a>
+  <a href="#how">Как работаем</a>
+  <a href="#pricing">Тарифы</a>
+  <a href="#faq">Вопросы</a>
+  <a href="#contact">Оставить заявку</a>
 </div>
 
 <main>
@@ -53,20 +51,81 @@
       <div class="blob blob--2" data-depth="0.3"></div>
       <div class="blob blob--3" data-depth="0.22"></div>
       <div class="grid-overlay"></div>
+      <div class="sun"></div>
+      <div class="palm">
+        <svg viewBox="0 0 200 200" fill="none">
+          <path d="M100 200 C 95 140 70 110 20 90" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+          <path d="M100 200 C 92 130 110 95 60 50" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+          <path d="M100 200 C 100 120 100 80 100 20" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+          <path d="M100 200 C 108 130 90 95 140 50" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+          <path d="M100 200 C 105 140 130 110 180 90" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="birds">
+        <span class="bird bird--1"><svg viewBox="0 0 60 20"><path d="M2 14 C12 -4 18 14 30 6 C42 14 48 -4 58 14" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg></span>
+        <span class="bird bird--2"><svg viewBox="0 0 60 20"><path d="M2 14 C12 -4 18 14 30 6 C42 14 48 -4 58 14" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg></span>
+        <span class="bird bird--3"><svg viewBox="0 0 60 20"><path d="M2 14 C12 -4 18 14 30 6 C42 14 48 -4 58 14" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg></span>
+        <span class="bird bird--4"><svg viewBox="0 0 60 20"><path d="M2 14 C12 -4 18 14 30 6 C42 14 48 -4 58 14" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg></span>
+        <span class="bird bird--5"><svg viewBox="0 0 60 20"><path d="M2 14 C12 -4 18 14 30 6 C42 14 48 -4 58 14" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg></span>
+      </div>
+      <div class="horizon"></div>
     </div>
 
-    <p class="hero__eyebrow split-in">привет, меня зовут</p>
-    <h1 class="hero__name" id="heroName">Ринат Досматов</h1>
-    <h2 class="hero__role">
-      <span id="typed"></span><span class="cursor">|</span>
-    </h2>
-    <p class="hero__desc split-in">
-      Помогаю бизнесу превращать хаос в процессы: собираю требования, строю BRD
-      и внедряю AI-автоматизацию там, где раньше всё держалось на ручном труде.
-    </p>
-    <div class="hero__actions split-in">
-      <a href="#contact" class="btn btn--primary magnetic">Обсудить проект</a>
-      <a href="#cases" class="btn btn--ghost magnetic">Смотреть кейсы</a>
+    <div class="hero__inner">
+      <div class="hero__copy">
+        <p class="hero__eyebrow split-in">сайты + приём платежей под ключ</p>
+        <h1 class="hero__name split-in">Сайт для бизнеса<br>с <span class="text-gradient">оплатой</span> на сайте</h1>
+        <p class="hero__desc split-in">
+          Делаю сайты для бизнеса в Кыргызстане и сам подключаю приём онлайн-оплаты
+          через FreedomPay — Visa, Mastercard, Элкарт. Не нужно искать отдельно
+          разработчика и отдельно подрядчика для эквайринга — закрываю всё одним пакетом.
+        </p>
+        <div class="hero__actions split-in">
+          <a href="#contact" class="btn btn--primary magnetic">Оставить заявку</a>
+          <a href="#how" class="btn btn--ghost magnetic">Как это работает</a>
+        </div>
+        <div class="hero__trust split-in">
+          <div class="hero__trust-item">
+            <strong>5–10 дней</strong>
+            <span>на сайт под ключ</span>
+          </div>
+          <div class="hero__trust-divider"></div>
+          <div class="hero__trust-item">
+            <strong>Visa · Mastercard · Элкарт</strong>
+            <span>приём прямо на сайте</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual split-in">
+        <div class="mockup" id="heroMockup">
+          <div class="mockup__bar">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="mockup__body">
+            <div class="mockup__nav">
+              <div class="mockup__logo"></div>
+              <div class="mockup__links"><span></span><span></span><span></span></div>
+            </div>
+            <div class="mockup__hero">
+              <div class="mockup__line mockup__line--lg"></div>
+              <div class="mockup__line mockup__line--md"></div>
+              <div class="mockup__btn"></div>
+            </div>
+          </div>
+          <div class="mockup__card">
+            <div class="mockup__card-row">
+              <span class="mockup__card-chip"></span>
+              <span class="mockup__card-logo">VISA</span>
+            </div>
+            <div class="mockup__card-number">•••• •••• •••• 4582</div>
+            <div class="mockup__card-row mockup__card-row--bottom">
+              <span>Оплата прошла</span>
+              <span class="mockup__card-check">✓</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="scroll-hint split-in">
@@ -78,149 +137,172 @@
   <section class="stats">
     <div class="stats__grid">
       <div class="stat reveal">
-        <span class="stat__num" data-count="6">0</span>
-        <p>проектов в работе</p>
+        <span class="stat__num" data-count="1">0</span>
+        <p>подрядчик на сайт и оплату</p>
       </div>
       <div class="stat reveal">
-        <span class="stat__num" data-count="2">0</span>
-        <p>компании, где прокачиваю BA</p>
+        <span class="stat__num" data-count="10" data-suffix="">0</span>
+        <p>дней на сайт под ключ</p>
       </div>
       <div class="stat reveal">
-        <span class="stat__num" data-count="5" data-suffix="+">0</span>
-        <p>AI-инструментов ежедневно</p>
+        <span class="stat__num" data-count="3" data-suffix="+">0</span>
+        <p>способа оплаты на сайте</p>
       </div>
       <div class="stat reveal">
         <span class="stat__num" data-count="100" data-suffix="%">0</span>
-        <p>фокус на результат</p>
+        <p>сопровождение до запуска</p>
       </div>
     </div>
   </section>
 
-  <section id="services" class="section">
+  <section id="features" class="section">
     <p class="section__index reveal">01</p>
-    <h3 class="section__title reveal">Чем могу быть полезен</h3>
+    <h3 class="section__title reveal">Что входит в услугу</h3>
     <div class="services-grid">
-      <div class="service-card tilt reveal">
-        <span class="service-card__num">01</span>
-        <h4>Бизнес-анализ</h4>
-        <p>Сбор требований, бэклог и BRD, которые не приходится переписывать с нуля.</p>
+      <div class="service-card service-card--feature tilt reveal">
+        <span class="service-card__index">01</span>
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="7" y1="13" x2="14" y2="13"/><line x1="7" y1="16" x2="11" y2="16"/></svg>
+        </div>
+        <h4>Сайт под ключ</h4>
+        <p>Лендинг, сайт-визитка или интернет-магазин — дизайн и разработка под ваш бизнес и аудиторию.</p>
       </div>
       <div class="service-card tilt reveal">
-        <span class="service-card__num">02</span>
-        <h4>AI-автоматизация</h4>
-        <p>Внедряю Claude и LLM-инструменты в рабочие процессы — от поддержки до продукта.</p>
+        <span class="service-card__index">02</span>
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 15l6-6"/><path d="M11 5l1-1a3.5 3.5 0 015 5l-1 1"/><path d="M13 19l-1 1a3.5 3.5 0 01-5-5l1-1"/></svg>
+        </div>
+        <h4>Подключение FreedomPay</h4>
+        <p>Сам оформляю заявку, собираю документы и подключаю приём платежей.</p>
       </div>
       <div class="service-card tilt reveal">
-        <span class="service-card__num">03</span>
-        <h4>Данные и парсинг</h4>
-        <p>Собираю и структурирую данные: от объявлений по авто до недвижимости.</p>
+        <span class="service-card__index">03</span>
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/></svg>
+        </div>
+        <h4>Оплата на сайте</h4>
+        <p>Visa, Mastercard, Элкарт прямо на сайте — клиент платит не уходя на сторонние страницы.</p>
       </div>
       <div class="service-card tilt reveal">
-        <span class="service-card__num">04</span>
-        <h4>Платёжные интеграции</h4>
-        <p>Глубокое знание FreedomPay API — консультации и поддержка интеграций.</p>
+        <span class="service-card__index">04</span>
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="13" height="9" rx="1.5"/><line x1="3" y1="16" x2="16" y2="16"/><rect x="16" y="9" width="6" height="11" rx="1.2"/></svg>
+        </div>
+        <h4>Адаптивный дизайн</h4>
+        <p>Сайт одинаково хорошо работает на телефоне, планшете и десктопе.</p>
+      </div>
+      <div class="service-card tilt reveal">
+        <span class="service-card__index">05</span>
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v13a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1z"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg>
+        </div>
+        <h4>Помощь с документами</h4>
+        <p>Подскажу, какие документы нужны для эквайринга, помогу с оформлением заявки в FreedomPay.</p>
+      </div>
+      <div class="service-card service-card--wide tilt reveal">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0116 0"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M20 19a4 4 0 01-4 4h-2"/></svg>
+        </div>
+        <div>
+          <h4>Поддержка после запуска</h4>
+          <p>Правки, доработки и помощь, если что-то нужно поменять на сайте после старта продаж.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="about" class="section">
+  <section id="how" class="section">
     <p class="section__index reveal">02</p>
-    <h3 class="section__title reveal">Обо мне</h3>
-    <div class="about reveal">
-      <p>
-        Сейчас я L1-поддержка в <strong>FreedomPay</strong> — платёжном шлюзе для
-        Кыргызстана — и постепенно перехожу в роль <strong>Business Analyst</strong>.
-        Параллельно веду поддержку white-label казино <strong>Pinco</strong> и
-        развиваю собственные продукты — от парсеров до пет-стартапов.
-      </p>
-      <p>
-        Свободное время уходит на «второй мозг» в Obsidian и эксперименты
-        с Claude Code как с инструментом для автоматизации рутины — своей и чужой.
-      </p>
-    </div>
-  </section>
-
-  <section id="cases" class="section">
-    <p class="section__index reveal">03</p>
-    <h3 class="section__title reveal">Кейсы</h3>
-    <div class="projects-grid">
-
-      <article class="project-card tilt reveal">
-        <div class="project-card__top">
-          <h4>car-parser</h4>
-          <span class="badge badge--live">задеплоен</span>
-        </div>
-        <p>Парсер объявлений по авто. Vercel + PostgreSQL.</p>
-      </article>
-
-      <article class="project-card tilt reveal">
-        <div class="project-card__top">
-          <h4>KG Real Estate</h4>
-          <span class="badge badge--idea">в работе</span>
-        </div>
-        <p>Скрапер объявлений недвижимости по Кыргызстану.</p>
-      </article>
-
-      <article class="project-card tilt reveal">
-        <div class="project-card__top">
-          <h4>NomadEvents</h4>
-          <span class="badge badge--idea">стартап</span>
-        </div>
-        <p>Платформа для событий — в разработке.</p>
-      </article>
-
-      <article class="project-card tilt reveal">
-        <div class="project-card__top">
-          <h4>Legalit</h4>
-          <span class="badge badge--idea">стартап</span>
-        </div>
-        <p>Легал-тех проект — в разработке.</p>
-      </article>
-
-      <article class="project-card tilt reveal">
-        <div class="project-card__top">
-          <h4>Второй мозг</h4>
-          <span class="badge badge--live">в работе ежедневно</span>
-        </div>
-        <p>Автоматизация личных процессов: Obsidian + Claude.</p>
-      </article>
-
-      <article class="project-card tilt reveal">
-        <div class="project-card__top">
-          <h4>Психо мама</h4>
-          <span class="badge badge--idea">личный проект</span>
-        </div>
-        <p>Психологический проект для мамы.</p>
-      </article>
-
-    </div>
-  </section>
-
-  <section id="experience" class="section">
-    <p class="section__index reveal">04</p>
-    <h3 class="section__title reveal">Опыт</h3>
+    <h3 class="section__title reveal">Как проходит работа</h3>
     <div class="timeline">
       <div class="timeline__item reveal">
         <div class="timeline__dot"></div>
         <div class="timeline__content">
           <div class="timeline__head">
-            <h4>FreedomPay</h4>
-            <span class="timeline__tag">сейчас</span>
+            <h4>Бриф и заявка</h4>
+            <span class="timeline__tag">1 день</span>
           </div>
-          <p class="timeline__role">Support L1 → Business Analyst (в переходе)</p>
-          <p>Платёжный шлюз для Кыргызстана. Поддержка изнутри платёжных потоков, сейчас — переход в BA: бэклог, требования, работа с продуктом.</p>
+          <p class="timeline__role">Обсуждаем задачу, структуру сайта и нужные способы оплаты</p>
+          <p>Заполняете форму ниже — созваниваемся и фиксируем объём работ.</p>
         </div>
       </div>
       <div class="timeline__item reveal">
         <div class="timeline__dot"></div>
         <div class="timeline__content">
           <div class="timeline__head">
-            <h4>Pinco</h4>
-            <span class="timeline__tag">параллельно</span>
+            <h4>Дизайн и разработка сайта</h4>
+            <span class="timeline__tag">5–10 дней</span>
           </div>
-          <p class="timeline__role">Support L1, White-Label</p>
-          <p>Поддержка white-label казино-продукта, работа с партнёрскими брендами.</p>
+          <p class="timeline__role">Делаю дизайн и верстаю сайт по вашему ТЗ</p>
+          <p>Показываю промежуточные версии, вношу правки по ходу работы.</p>
         </div>
+      </div>
+      <div class="timeline__item reveal">
+        <div class="timeline__dot"></div>
+        <div class="timeline__content">
+          <div class="timeline__head">
+            <h4>Подключение FreedomPay</h4>
+            <span class="timeline__tag">отдельный срок</span>
+          </div>
+          <p class="timeline__role">Параллельно подаём заявку и документы на подключение эквайринга</p>
+          <p>Это отдельный процесс на стороне платёжной системы — сроки зависят от FreedomPay и комплектности документов, веду этот этап за вас.</p>
+        </div>
+      </div>
+      <div class="timeline__item reveal">
+        <div class="timeline__dot"></div>
+        <div class="timeline__content">
+          <div class="timeline__head">
+            <h4>Запуск</h4>
+            <span class="timeline__tag">готово</span>
+          </div>
+          <p class="timeline__role">Встраиваю оплату на сайт и тестируем платежи</p>
+          <p>После тестовых транзакций сайт с оплатой полностью готов к продажам.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section">
+    <p class="section__index reveal">03</p>
+    <h3 class="section__title reveal">Тарифы</h3>
+    <div class="pricing-grid">
+      <div class="price-card tilt reveal">
+        <h4>Сайт-визитка</h4>
+        <p class="price-card__desc">Лендинг или небольшой сайт для услуг / личного бренда</p>
+        <div class="price-card__amount">по запросу</div>
+        <ul class="price-card__list">
+          <li>Дизайн и вёрстка под ключ</li>
+          <li>Адаптивная вёрстка</li>
+          <li>Форма заявки / контакты</li>
+          <li>Без приёма платежей</li>
+        </ul>
+        <a href="#contact" class="btn btn--ghost magnetic">Узнать цену</a>
+      </div>
+      <div class="price-card price-card--featured tilt reveal">
+        <span class="price-card__badge">популярный</span>
+        <h4>Сайт + приём оплаты</h4>
+        <p class="price-card__desc">Для бизнеса, который хочет продавать прямо с сайта</p>
+        <div class="price-card__amount">по запросу</div>
+        <ul class="price-card__list">
+          <li>Всё из тарифа «Сайт-визитка»</li>
+          <li>Подключение FreedomPay</li>
+          <li>Visa / Mastercard / Элкарт на сайте</li>
+          <li>Помощь с документами для эквайринга</li>
+          <li>Тестирование платежей перед запуском</li>
+        </ul>
+        <a href="#contact" class="btn btn--primary magnetic">Узнать цену</a>
+      </div>
+      <div class="price-card tilt reveal">
+        <h4>Интернет-магазин</h4>
+        <p class="price-card__desc">Для каталога товаров и регулярных онлайн-продаж</p>
+        <div class="price-card__amount">индивидуально</div>
+        <ul class="price-card__list">
+          <li>Всё из тарифа «Сайт + приём оплаты»</li>
+          <li>Каталог и корзина</li>
+          <li>Индивидуальная структура под бизнес</li>
+          <li>Сопровождение после запуска</li>
+        </ul>
+        <a href="#contact" class="btn btn--ghost magnetic">Обсудить условия</a>
       </div>
     </div>
   </section>
@@ -228,32 +310,73 @@
   <section class="marquee-section">
     <div class="marquee">
       <div class="marquee__row marquee__row--1">
-        <span>Claude API</span><span>Claude Code</span><span>Prompt Engineering</span><span>Business Analysis</span><span>BRD</span><span>JIRA</span><span>Confluence</span><span>Node.js</span>
-        <span>Claude API</span><span>Claude Code</span><span>Prompt Engineering</span><span>Business Analysis</span><span>BRD</span><span>JIRA</span><span>Confluence</span><span>Node.js</span>
+        <span>Visa</span><span>Mastercard</span><span>Элкарт</span><span>Apple Pay</span><span>Google Pay</span><span>REST API</span><span>3-D Secure</span>
+        <span>Visa</span><span>Mastercard</span><span>Элкарт</span><span>Apple Pay</span><span>Google Pay</span><span>REST API</span><span>3-D Secure</span>
       </div>
       <div class="marquee__row marquee__row--2">
-        <span>PostgreSQL</span><span>Obsidian</span><span>Markdown</span><span>FreedomPay API</span><span>PARA</span><span>Vercel</span><span>AI-Автоматизация</span><span>Second Brain</span>
-        <span>PostgreSQL</span><span>Obsidian</span><span>Markdown</span><span>FreedomPay API</span><span>PARA</span><span>Vercel</span><span>AI-Автоматизация</span><span>Second Brain</span>
+        <span>Рекуррентные платежи</span><span>Антифрод</span><span>Личный кабинет</span><span>Выплаты</span><span>Возвраты</span><span>Аналитика</span>
+        <span>Рекуррентные платежи</span><span>Антифрод</span><span>Личный кабинет</span><span>Выплаты</span><span>Возвраты</span><span>Аналитика</span>
       </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <p class="section__index reveal">04</p>
+    <h3 class="section__title reveal">Частые вопросы</h3>
+    <div class="faq-list">
+      <details class="faq-item reveal">
+        <summary>Сколько по времени делается сайт?</summary>
+        <p>В среднем 5–10 дней на дизайн и разработку — зависит от сложности сайта и скорости обратной связи по правкам.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Сколько занимает подключение приёма платежей?</summary>
+        <p>Подключение к FreedomPay — отдельный процесс на стороне платёжной системы: проверка документов и одобрение занимают своё время, не зависящее от готовности сайта. Я веду этот процесс параллельно с разработкой, чтобы не терять время.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Какие документы нужны для подключения оплаты?</summary>
+        <p>Зависит от формы бизнеса (ИП, ОсОО и т.д.) — на этапе брифа скажу точный список и помогу с оформлением заявки.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Можно сделать сайт без приёма платежей?</summary>
+        <p>Да, можно заказать просто сайт-визитку или лендинг без эквайринга и подключить оплату позже.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Вы официальный представитель FreedomPay?</summary>
+        <p>Нет, это моя личная услуга по разработке сайтов. Я знаю продукт FreedomPay изнутри и помогаю клиентам пройти подключение быстрее и без лишних вопросов.</p>
+      </details>
     </div>
   </section>
 
   <section id="contact" class="section section--contact">
     <p class="section__index reveal">05</p>
-    <h3 class="section__title reveal">Давайте обсудим проект</h3>
-    <p class="contact__lead reveal">Открыт для общения о BA-практиках, продуктах и AI-автоматизации.</p>
-    <a href="mailto:dosmatovrinat60@gmail.com" class="contact__email magnetic reveal">dosmatovrinat60@gmail.com</a>
+    <h3 class="section__title reveal">Сделаем сайт с приёмом оплаты</h3>
+    <p class="contact__lead reveal">Оставьте заявку — обсудим задачу и сроки на сайт и подключение FreedomPay.</p>
+
+    <form class="contact-form reveal" id="contactForm">
+      <div class="contact-form__row">
+        <input type="text" name="name" placeholder="Имя" required>
+        <input type="text" name="company" placeholder="Название бизнеса">
+      </div>
+      <div class="contact-form__row">
+        <input type="tel" name="phone" placeholder="Телефон" required>
+        <input type="email" name="email" placeholder="Email">
+      </div>
+      <textarea name="message" placeholder="Коротко о проекте" rows="3"></textarea>
+      <button type="submit" class="btn btn--primary magnetic">Отправить заявку</button>
+      <p class="contact-form__note" id="formNote"></p>
+    </form>
+
     <div class="contact__links reveal">
-      <a href="#" class="contact__social" data-placeholder="telegram">Telegram</a>
-      <a href="#" class="contact__social" data-placeholder="linkedin">LinkedIn</a>
-      <a href="#" class="contact__social" data-placeholder="github">GitHub</a>
+      <a href="mailto:dosmatovrinat60@gmail.com" class="contact__social">Email</a>
+      <a href="https://t.me/dosmatuw" target="_blank" rel="noopener" class="contact__social">Telegram</a>
+      <a href="https://wa.me/996705303123" target="_blank" rel="noopener" class="contact__social">WhatsApp</a>
     </div>
   </section>
 
 </main>
 
 <footer class="footer">
-  <p>© 2026 Ринат Досматов</p>
+  <p>© 2026 Ринат Досматов — сайты для бизнеса с приёмом онлайн-платежей</p>
 </footer>
 
 <script src="script.js"></script>
